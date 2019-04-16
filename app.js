@@ -11,10 +11,18 @@ app.get('/', function(req, res) {
 });
 
 // get all messages
+app.get('/api/conversation/messages', (req, res) => {
+    res.status(200).send({
+        success: 'true',
+        data: db.getAllMessages()
+    });
+});
+
+// get messages from conversation
 app.get('/api/conversation/messages/:count', (req, res) => {
     res.status(200).send({
         success: 'true',
-        data: db.getMessages(req.params.count)
+        data: db.getConversationMessages(req.params.count)
     });
 });
 
@@ -22,7 +30,7 @@ app.get('/api/conversation/messages/:count', (req, res) => {
 app.get('/api/conversation/users', (req, res) => {
     res.status(200).send({
         success: 'true',
-        data: db.getUsers()
+        data: db.getUsersStatic()
     });
 });
 
