@@ -1,0 +1,16 @@
+{
+  "name": "js-customer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonas Elan",
+  "license": "ISC",
+  "dependencies": {
+    "elasticsearch": "^15.4.1",
+    "express": "^4.16.4",
+    "get-json": "^1.0.1"
+  }
+}
