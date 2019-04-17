@@ -974,7 +974,6 @@ const getUsersStatic = () => {
                 "id":1,
                 "name":"user1",
                 "email":"email@email.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-15 17:18:56",
                 "updated_at":"2019-03-15 17:18:56"
             },
@@ -982,7 +981,6 @@ const getUsersStatic = () => {
                 "id":2,
                 "name":"Giles Cruickshank Jr.",
                 "email":"zkreiger@example.net",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -990,7 +988,6 @@ const getUsersStatic = () => {
                 "id":3,
                 "name":"Prof. Sterling Hintz",
                 "email":"ubradtke@example.net",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -998,7 +995,6 @@ const getUsersStatic = () => {
                 "id":4,
                 "name":"Tommie Langworth",
                 "email":"valerie31@example.org",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1006,7 +1002,6 @@ const getUsersStatic = () => {
                 "id":5,
                 "name":"Eveline Stoltenberg",
                 "email":"javon.johns@example.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1014,7 +1009,6 @@ const getUsersStatic = () => {
                 "id":6,
                 "name":"Cameron Nolan",
                 "email":"myrtie25@example.net",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1022,7 +1016,6 @@ const getUsersStatic = () => {
                 "id":7,
                 "name":"Mr. Scot Franecki",
                 "email":"ashton38@example.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1030,7 +1023,6 @@ const getUsersStatic = () => {
                 "id":8,
                 "name":"Florencio Swaniawski DVM",
                 "email":"jedidiah.walter@example.net",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1038,7 +1030,6 @@ const getUsersStatic = () => {
                 "id":9,
                 "name":"Prof. Alfred Stamm Jr.",
                 "email":"alva.block@example.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1046,7 +1037,6 @@ const getUsersStatic = () => {
                 "id":10,
                 "name":"Tad Windler",
                 "email":"ugerhold@example.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             },
@@ -1054,7 +1044,6 @@ const getUsersStatic = () => {
                 "id":11,
                 "name":"Kaela Kuphal III",
                 "email":"vmcglynn@example.com",
-                "email_verified_at":null,
                 "created_at":"2019-03-28 12:52:39",
                 "updated_at":"2019-03-28 12:52:39"
             }
