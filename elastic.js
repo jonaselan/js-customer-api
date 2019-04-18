@@ -21,8 +21,14 @@ async function createMessageIndex() {
                         "to": { "type": "short" },
                         "read": { "type": "boolean" },
                         "content": { "type": "text" },
-                        "created_at": { "type": "date" },
-                        "updated_at": { "type": "date" },
+                        "created_at": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd HH:mm:ss",
+                        },
+                        "updated_at": {
+                            "type": "date",
+                            "format": "yyyy-MM-dd HH:mm:ss",
+                        },
                     }
                 }
             }
@@ -70,27 +76,11 @@ async function deleteIndex(name) {
 }
 
 async function createDocumentsToIndex(index, document) {
-    // await client.index({
-//     index: 'users',
-//     body: {
-//         id: 100,
-//         name: "user100",
-//         email: "email1000@email.com",
-//         created_at: "2019-03-15 17:18:56",
-//         updated_at: "2019-03-15 17:18:56"
-//     }
-// });
-//
-// await client.index({
-//     index: 'users',
-//     body: {
-//         id: 200,
-//         name: "Giles Cruickshank Jr.",
-//         email: "zkreiger@example.net",
-//         created_at: "2019-03-28 12:52:39",
-//         updated_at: "2019-03-28 12:52:39"
-//     }
-// });
+    await client.index({
+        index: index,
+        refresh: true,
+        body: document
+    });
 }
 
 async function elasticSearch(field = 'id', q) {

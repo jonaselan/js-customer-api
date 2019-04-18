@@ -1051,7 +1051,7 @@ const getUsersStatic = () => {
     }
 };
 
-const getUsers = () => {
+const getRandomUsers = () => {
     users = [];
 
     for (let i = 0; i < 10; i++) {
@@ -1068,7 +1068,7 @@ const getUsers = () => {
 };
 
 module.exports = {
-    getUsers,
+    getRandomUsers,
     getAllMessages,
     getConversationMessages,
     getUsersStatic
