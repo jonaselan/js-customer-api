@@ -26,14 +26,14 @@ const axiosApi = axios.create({
 // elastic.createMessageIndex().catch(console.log);
 // elastic.createUserIndex().catch(console.log);
 
-function apiCall(route) {
-    return axiosApi.get(route)
-        .then((res) => {
-            return res.data;
-        }).catch((res) => {
-            return res;
-        });
-}
+// function apiCall(route) {
+//     return axiosApi.get(route)
+//         .then((res) => {
+//             return res.data;
+//         }).catch((res) => {
+//             return res;
+//         });
+// }
 
 // fill users index
 // apiCall('/api/conversation/users').then(res => {
