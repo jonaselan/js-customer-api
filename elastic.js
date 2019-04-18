@@ -50,17 +50,23 @@ async function createUserIndex() {
                     "number_of_shards" : 1
                 },
                 mappings : {
-                    "properties" : {
-                        "id": { "type": "short" },
-                        "name": { "type": "text" },
-                        "email": { "type": "keyword" },
-                        "created_at": {
-                            "type": "date",
-                            "format": "yyyy-MM-dd HH:mm:ss",
+                    properties : {
+                        id: {
+                            type: "short"
                         },
-                        "updated_at": {
-                            "type": "date",
-                            "format": "yyyy-MM-dd HH:mm:ss",
+                        name: {
+                            type: "text"
+                        },
+                        email: {
+                            type: "keyword"
+                        },
+                        created_at: {
+                            type: "date",
+                            format: "yyyy-MM-dd HH:mm:ss",
+                        },
+                        updated_at: {
+                            type: "date",
+                            format: "yyyy-MM-dd HH:mm:ss",
                         },
                     }
                 }
@@ -83,8 +89,24 @@ async function createDocumentsToIndex(index, document) {
     });
 }
 
-async function elasticSearch(field = 'id', q) {
-    // Let's search!
+async function elasticRange(index, field, gte, lte) {
+    const { body } = await client.search({
+        index: index,
+        body: {
+            query: {
+                range: {
+                    [field]: {
+                        gte,
+                        lte
+                    }
+                }
+            }
+        }
+    });
+    console.log(body.hits.hits)
+}
+
+async function elasticSearchByField(field = 'id', q) {
     // const { body } = await client.search({
     //     index: 'users',
     //     body: {
@@ -103,5 +125,6 @@ module.exports = {
     createUserIndex,
     deleteIndex,
     createDocumentsToIndex,
-    elasticSearch,
+    elasticSearchByField,
+    elasticRange,
 };

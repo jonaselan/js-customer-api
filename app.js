@@ -56,3 +56,5 @@ const axiosApi = axios.create({
 //     });
 // });
 
+elastic.elasticRange('users', 'date', '2019-03-10 17:18:56', '2019-03-16 17:18:56').catch(console.log);
+
