@@ -14,10 +14,10 @@ app.listen(PORT, () => {
     console.log(`server running on port ${PORT}`)
 });
 
-const axiosApi = axios.create({
-    baseURL: URL,
-    timeout: 1000
-});
+// const axiosApi = axios.create({
+//     baseURL: URL,
+//     timeout: 1000
+// });
 
 // delete index
 // elastic.deleteIndex('messages').catch(console.log);
@@ -37,7 +37,7 @@ const axiosApi = axios.create({
 
 // fill users index
 // apiCall('/api/conversation/users').then(res => {
-//     if (res.success !== 'true')
+//     if (res.success === false)
 //         return;
 //
 //     res.data.users.map((el) => {
@@ -47,18 +47,12 @@ const axiosApi = axios.create({
 
 // fill messages index
 // apiCall('/api/conversation/random_messages').then(res => {
-//     if (res.success !== 'true')
+//     if (res.success === false)
 //         return;
 //
 //     res.data.messages.map((el) => {
-//         // console.log(el);
 //         elastic.createDocumentsToIndex('messages', el).catch(console.log);
 //     });
 // });
 
-// search by range
-// elastic.elasticRange('users', 'created_at', '2019-03-10 17:18:56', '2019-03-16 17:18:56').catch(console.log);
-
-// search by term
-// elastic.elasticSearchByField('users', 'name', 'user100').catch(console.log());
 
