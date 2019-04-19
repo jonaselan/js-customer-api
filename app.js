@@ -56,5 +56,9 @@ const axiosApi = axios.create({
 //     });
 // });
 
-elastic.elasticRange('users', 'date', '2019-03-10 17:18:56', '2019-03-16 17:18:56').catch(console.log);
+// search by range
+// elastic.elasticRange('users', 'created_at', '2019-03-10 17:18:56', '2019-03-16 17:18:56').catch(console.log);
+
+// search by term
+// elastic.elasticSearchByField('users', 'name', 'user100').catch(console.log());
 

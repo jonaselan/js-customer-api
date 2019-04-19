@@ -91,7 +91,7 @@ async function createDocumentsToIndex(index, document) {
 
 async function elasticRange(index, field, gte, lte) {
     const { body } = await client.search({
-        index: index,
+        index,
         body: {
             query: {
                 range: {
@@ -103,21 +103,23 @@ async function elasticRange(index, field, gte, lte) {
             }
         }
     });
-    console.log(body.hits.hits)
+
+    return body.hits.hits;
 }
 
-async function elasticSearchByField(field = 'id', q) {
-    // const { body } = await client.search({
-    //     index: 'users',
-    //     body: {
-    //         query: {
-    //             match: {
-    //                 name: 'giles'
-    //             }
-    //         }
-    //     }
-    // });
-    // console.log(body.hits.hits)
+async function elasticSearchByField(index, field = 'id', value) {
+    const { body } = await client.search({
+        index,
+        body: {
+            query: {
+                term: {
+                    [field]: value
+                }
+            }
+        }
+    });
+
+    return body.hits.hits;
 }
 
 module.exports = {
