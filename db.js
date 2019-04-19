@@ -23,7 +23,6 @@ const getConversationMessages = (count) => {
         messages
     };
 };
-
 const getAllMessages = () => {
   return {
       "messages": [
@@ -1050,7 +1049,6 @@ const getUsersStatic = () => {
         ]
     }
 };
-
 const getRandomUsers = () => {
     users = [];
 
@@ -1067,9 +1065,197 @@ const getRandomUsers = () => {
     }
 };
 
+const getCustomersStatic = () => {
+    return {
+        "customers": [
+            {
+                "id":1,
+                "name":"Prof. Hermina Nader V",
+                "email":"bschinner@example.net",
+                "phone":"+1.687.468.1844",
+                "website":"https:schmitt.comsint-vel-modi-aliquam-cum-reprehenderit-aut-tenetur-nesciunt.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":2,
+                "name":"Dr. Ursula Renner",
+                "email":"bulah.roob@example.com",
+                "phone":"632-916-8320",
+                "website":"http:www.mosciski.bizvel-a-possimus-natus-dolore-porro-iusto-consequatur-reiciendis",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":3,
+                "name":"Britney Padberg",
+                "email":"yessenia.nolan@example.net",
+                "phone":"1-726-773-3419 x8101",
+                "website":"https:anderson.comaut-sed-enim-repellat-molestias-adipisci-omnis.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":4,
+                "name":"Vergie Schulist",
+                "email":"tate69@example.org",
+                "phone":"685.458.3087",
+                "website":"http:smith.infomollitia-optio-ea-cumque.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":5,
+                "name":"Olin Kirlin",
+                "email":"yundt.waldo@example.com",
+                "phone":"+1-960-274-4922",
+                "website":"http:daugherty.infodicta-qui-dolorum-recusandae-tenetur-iste",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":6,
+                "name":"Clarissa Corwin I",
+                "email":"murphy.verner@example.net",
+                "phone":"336-741-4579",
+                "website":"https:www.williamson.commaxime-dolorem-enim-ea-ab-ut-perspiciatis-eos",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":7,
+                "name":"Fred Bartoletti",
+                "email":"wisozk.marjorie@example.net",
+                "phone":"(749) 898-3772",
+                "website":"http:www.klein.bizoptio-modi-error-quo.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":8,
+                "name":"Tia Hegmann",
+                "email":"itrantow@example.net",
+                "phone":"+1-446-684-5397",
+                "website":"https:schimmel.bizdolorem-et-quo-eos-non-laudantium-consequatur-tempore.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":9,
+                "name":"Tia Grant",
+                "email":"hammes.amara@example.org",
+                "phone":"(750) 660-8706 x0221",
+                "website":"https:vandervort.bizest-quos-a-magnam-sit.html",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":10,
+                "name":"Ronny Klocko",
+                "email":"baylee10@example.com",
+                "phone":"1-497-721-8967",
+                "website":"http:lueilwitz.com",
+                "created_at":"2019-04-19 17:00:36",
+                "updated_at":"2019-04-19 17:00:36"
+            },
+            {
+                "id":11,
+                "name":"Lelia Murazik",
+                "email":"smuller@example.com",
+                "phone":"1-276-875-4110 x08517",
+                "website":"https:paucek.comsed-laudantium-ut-consequatur-ut-ut-cum-est.html",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":12,
+                "name":"Miss Retta Pfeffer MD",
+                "email":"schaefer.tyrique@example.com",
+                "phone":"243-417-9458 x95734",
+                "website":"http:www.reilly.comtotam-ad-consequatur-expedita-eveniet-sequi-et.html",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":13,
+                "name":"Dr. Zane Bergstrom",
+                "email":"brekke.elvera@example.com",
+                "phone":"794.206.9189 x554",
+                "website":"http:www.considine.com",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":14,
+                "name":"Prudence Cassin",
+                "email":"ukreiger@example.com",
+                "phone":"1-334-446-0873 x007",
+                "website":"http:klocko.comab-velit-saepe-blanditiis-voluptatibus.html",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":15,
+                "name":"Aleen Stokes",
+                "email":"kendra.feest@example.org",
+                "phone":"686.302.5237 x66028",
+                "website":"https:www.lesch.netest-ut-ut-et-amet-esse",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":16,
+                "name":"Prof. Quincy Pollich",
+                "email":"robert.fisher@example.org",
+                "phone":"636.276.0078",
+                "website":"http:cronin.bizsit-iusto-laborum-impedit-sequi-natus-ipsa",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":17,
+                "name":"Lula Ruecker",
+                "email":"wilbert.king@example.org",
+                "phone":"(924) 501-6291 x35408",
+                "website":"https:hahn.comid-consequatur-dolorem-deserunt-nobis-voluptate.html",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":18,
+                "name":"Agnes Klein",
+                "email":"lehner.billie@example.org",
+                "phone":"(443) 738-8989 x54141",
+                "website":"http:www.marks.infoveritatis-excepturi-voluptas-autem-dolor-vero-libero",
+                "created_at":"2019-04-19 19:47:09",
+                "updated_at":"2019-04-19 19:47:09"
+            },
+            {
+                "id":19,
+                "name":"Lowell Stracke",
+                "email":"arath@example.com",
+                "phone":"607-540-8425 x1484",
+                "website":"http:www.runolfsson.netsequi-vel-deleniti-cupiditate-molestiae-est",
+                "created_at":"2019-04-19 19:47:10",
+                "updated_at":"2019-04-19 19:47:10"
+            },
+            {
+                "id":20,
+                "name":"Mario Kunze PhD",
+                "email":"ywehner@example.net",
+                "phone":"+1-634-338-7016",
+                "website":"http:vonrueden.infocumque-quia-eaque-nihil-et-aut",
+                "created_at":"2019-04-19 19:47:10",
+                "updated_at":"2019-04-19 19:47:10"
+            }
+        ]
+    }
+};
+
 module.exports = {
     getRandomUsers,
     getAllMessages,
     getConversationMessages,
-    getUsersStatic
+    getUsersStatic,
+    getCustomersStatic,
 };

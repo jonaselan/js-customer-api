@@ -18,14 +18,6 @@ app.listen(PORT, () => {
 //     baseURL: URL,
 //     timeout: 1000
 // });
-
-// delete index
-// elastic.deleteIndex('messages').catch(console.log);
-
-// create index
-// elastic.createMessageIndex().catch(console.log);
-// elastic.createUserIndex().catch(console.log);
-
 // function apiCall(route) {
 //     return axiosApi.get(route)
 //         .then((res) => {
@@ -35,7 +27,65 @@ app.listen(PORT, () => {
 //         });
 // }
 
-// fill users index
+// DELETE INDEX
+// elastic.deleteIndex('messages').catch(console.log);
+
+// CREATE INDEX
+// elastic.createIndex('messages', {
+//     id: { type: "short" },
+//     from: { type: "short" },
+//     to: { type: "short" },
+//     read: { type: "boolean" },
+//     content: { type: "text" },
+//     created_at: {
+//         type: "date",
+//         format: "yyyy-MM-dd HH:mm:ss",
+//     },
+//     updated_at: {
+//         type: "date",
+//         format: "yyyy-MM-dd HH:mm:ss",
+//     },
+// }).catch(console.log);
+
+// elastic.createIndex('users', {
+//     properties : {
+//         id: {
+//             type: "short"
+//         },
+//         name: {
+//             type: "text"
+//         },
+//         email: {
+//             type: "keyword"
+//         },
+//         created_at: {
+//             type: "date",
+//             format: "yyyy-MM-dd HH:mm:ss",
+//         },
+//         updated_at: {
+//             type: "date",
+//             format: "yyyy-MM-dd HH:mm:ss",
+//         },
+//     }
+// }).catch(console.log);
+
+// elastic.createIndex('customers', {
+//     id: { type: "short" },
+//     name: { type: "text" },
+//     email: { type: "keyword" },
+//     phone: { type: "text" },
+//     website: { type: "text" },
+//     created_at: {
+//         type: "date",
+//         format: "yyyy-MM-dd HH:mm:ss",
+//     },
+//     updated_at: {
+//         type: "date",
+//         format: "yyyy-MM-dd HH:mm:ss",
+//     }
+// }).catch(console.log);
+
+// FILL USERS INDEX
 // apiCall('/api/conversation/users').then(res => {
 //     if (res.success === false)
 //         return;
@@ -45,7 +95,7 @@ app.listen(PORT, () => {
 //     });
 // });
 
-// fill messages index
+// FILL MESSAGES INDEX
 // apiCall('/api/conversation/random_messages').then(res => {
 //     if (res.success === false)
 //         return;
@@ -55,4 +105,13 @@ app.listen(PORT, () => {
 //     });
 // });
 
+// FILL CUSTOMERS INDEX
+// apiCall('/api/customers').then(res => {
+//     if (res.success === false)
+//         return;
+//
+//     res.data.customers.map((el) => {
+//         elastic.createDocumentsToIndex('customers', el).catch(console.log);
+//     });
+// });
 

@@ -1,74 +1,19 @@
 const { Client } = require('@elastic/elasticsearch');
 const client = new Client({ node: 'http://localhost:9200' });
 
-async function createMessageIndex() {
-    let messages_exist = await client.indices.exists({
-        index: 'messages'
+async function createIndex(index, properties) {
+    let index_exist = await client.indices.exists({
+        index
     });
 
-    if (!messages_exist.body) {
+    if (!index_exist.body) {
         await client.indices.create({
-            index: 'messages',
+            index,
             include_type_name: false,
             body: {
-                settings : {
-                    "number_of_shards" : 1
-                },
-                mappings : {
-                    "properties" : {
-                        "id": { "type": "short" },
-                        "from": { "type": "short" },
-                        "to": { "type": "short" },
-                        "read": { "type": "boolean" },
-                        "content": { "type": "text" },
-                        "created_at": {
-                            "type": "date",
-                            "format": "yyyy-MM-dd HH:mm:ss",
-                        },
-                        "updated_at": {
-                            "type": "date",
-                            "format": "yyyy-MM-dd HH:mm:ss",
-                        },
-                    }
-                }
-            }
-        });
-    }
-}
-
-async function createUserIndex() {
-    let users_exist = await client.indices.exists({
-        index: 'users'
-    });
-
-    if (!users_exist.body) {
-        await client.indices.create({
-            index: 'users',
-            include_type_name: false,
-            body: {
-                settings : {
-                    "number_of_shards" : 1
-                },
-                mappings : {
-                    properties : {
-                        id: {
-                            type: "short"
-                        },
-                        name: {
-                            type: "text"
-                        },
-                        email: {
-                            type: "keyword"
-                        },
-                        created_at: {
-                            type: "date",
-                            format: "yyyy-MM-dd HH:mm:ss",
-                        },
-                        updated_at: {
-                            type: "date",
-                            format: "yyyy-MM-dd HH:mm:ss",
-                        },
-                    }
+                settings: { number_of_shards : 1 },
+                mappings: {
+                    properties
                 }
             }
         });
@@ -123,10 +68,9 @@ async function elasticSearchByField(index, field = 'id', value) {
 }
 
 module.exports = {
-    createMessageIndex,
-    createUserIndex,
     deleteIndex,
     createDocumentsToIndex,
     elasticSearchByField,
     elasticRange,
+    createIndex,
 };

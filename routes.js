@@ -26,7 +26,6 @@ module.exports = function(app){
 
     // get all users
     app.get('/api/conversation/users', async (req, res) => {
-        // let params = req.query;
         let options = {
             success: true,
             elasticResult: [],
@@ -40,6 +39,24 @@ module.exports = function(app){
             data: options.elasticResult.length
                 ? options.elasticResult
                 : db.getUsersStatic()
+        });
+    });
+
+    // get all customers
+    app.get('/api/customers', async (req, res) => {
+        let options = {
+            success: true,
+            elasticResult: [],
+            params: req.query,
+            index: 'customers'
+        };
+        await filterRequest(options);
+
+        res.status(200).send({
+            success: options.success,
+            data: options.elasticResult.length
+                ? options.elasticResult
+                : db.getCustomersStatic()
         });
     });
 };
