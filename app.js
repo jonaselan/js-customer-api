@@ -49,15 +49,9 @@ app.listen(PORT, () => {
 
 // elastic.createIndex('users', {
 //     properties : {
-//         id: {
-//             type: "short"
-//         },
-//         name: {
-//             type: "text"
-//         },
-//         email: {
-//             type: "keyword"
-//         },
+//         id: { type: "short" },
+//         name: { type: "text" },
+//         email: { type: "keyword" },
 //         created_at: {
 //             type: "date",
 //             format: "yyyy-MM-dd HH:mm:ss",
@@ -70,18 +64,20 @@ app.listen(PORT, () => {
 // }).catch(console.log);
 
 // elastic.createIndex('customers', {
-//     id: { type: "short" },
-//     name: { type: "text" },
-//     email: { type: "keyword" },
-//     phone: { type: "text" },
-//     website: { type: "text" },
-//     created_at: {
-//         type: "date",
-//         format: "yyyy-MM-dd HH:mm:ss",
-//     },
-//     updated_at: {
-//         type: "date",
-//         format: "yyyy-MM-dd HH:mm:ss",
+//     properties : {
+//         id: { type: "short" },
+//         name: { type: "text" },
+//         email: { type: "keyword" },
+//         phone: { type: "text" },
+//         website: { type: "text" },
+//         created_at: {
+//             type: "date",
+//             format: "yyyy-MM-dd HH:mm:ss",
+//         },
+//         updated_at: {
+//             type: "date",
+//             format: "yyyy-MM-dd HH:mm:ss",
+//         }
 //     }
 // }).catch(console.log);
 

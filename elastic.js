@@ -1,7 +1,7 @@
 const { Client } = require('@elastic/elasticsearch');
 const client = new Client({ node: 'http://localhost:9200' });
 
-async function createIndex(index, properties) {
+async function createIndex(index, { properties }) {
     let index_exist = await client.indices.exists({
         index
     });
@@ -13,7 +13,7 @@ async function createIndex(index, properties) {
             body: {
                 settings: { number_of_shards : 1 },
                 mappings: {
-                    properties
+                    properties: properties
                 }
             }
         });
@@ -28,7 +28,7 @@ async function deleteIndex(name) {
 
 async function createDocumentsToIndex(index, document) {
     await client.index({
-        index: index,
+        index,
         refresh: true,
         body: document
     });
