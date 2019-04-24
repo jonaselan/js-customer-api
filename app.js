@@ -7,6 +7,9 @@ const URL = `http://localhost:${PORT}`;
 
 // Set up the express app and routes
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
 require('./routes')(app);
 
 // Turn on server
