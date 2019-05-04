@@ -69,7 +69,15 @@ app.listen(PORT, () => {
 // elastic.createIndex('customers', {
 //     properties : {
 //         id: { type: "short" },
-//         name: { type: "text" },
+//         name: {
+//             type: "text",
+//             fields: {
+//                 completion: {
+//                     type: "completion"
+//                 }
+//             },
+//             analyzer: "standard"
+//         },
 //         email: { type: "keyword" },
 //         phone: { type: "text" },
 //         website: { type: "text" },

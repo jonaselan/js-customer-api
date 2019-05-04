@@ -90,5 +90,17 @@ async function filterRequest(options) {
                     return `Internal error: ${err}`;
                 });
         }
+
+        if (options.params.search_type === 'suggestion') {
+            options.elasticResult = await elastic
+                .elasticSearchByFieldAutocomplete(options.index, options.params.field, options.params.q)
+                .then(result => {
+                    return result;
+                })
+                .catch((err) => {
+                    options.success = false;
+                    return `Internal error: ${err}`;
+                });
+        }
     }
 }

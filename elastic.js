@@ -28,6 +28,7 @@ async function deleteIndex(name) {
 
 async function createDocumentsToIndex(index, document) {
     await client.index({
+        id: document.id,
         index,
         refresh: true,
         body: document
@@ -67,10 +68,32 @@ async function elasticSearchByField(index, field = 'id', value) {
     return body.hits.hits;
 }
 
+async function elasticSearchByFieldAutocomplete(index, field = 'id', value) {
+    const { body } = await client.search({
+        index,
+        body: {
+            suggest: {
+              "customer-suggest-fuzzy": {
+                prefix: value,
+                completion: {
+                  field: "name.completion",
+                  fuzzy: {
+                    fuzziness: 1
+                  }
+                }
+              }
+            }
+        }
+    });
+
+    return body.hits.hits;
+}
+
 module.exports = {
-    deleteIndex,
+    createIndex,
     createDocumentsToIndex,
+    deleteIndex,
     elasticSearchByField,
     elasticRange,
-    createIndex,
+    elasticSearchByFieldAutocomplete,
 };
